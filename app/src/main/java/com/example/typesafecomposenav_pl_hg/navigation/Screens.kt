@@ -10,9 +10,9 @@ import androidx.compose.ui.Modifier
 import com.example.typesafecomposenav_pl_hg.data.MyDummy
 
 @Composable
-fun HomeScreen(modifier: Modifier = Modifier, onClick:() -> Unit) {
+fun AuthFirst(modifier: Modifier = Modifier, onClick:() -> Unit) {
     Box(modifier =  Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-        Text(text = "Home Screen", modifier = Modifier.clickable {
+        Text(text = "Auth First Screen", modifier = Modifier.clickable {
             onClick.invoke()
         })
     }
@@ -20,9 +20,18 @@ fun HomeScreen(modifier: Modifier = Modifier, onClick:() -> Unit) {
 
 
 @Composable
-fun ProfileScreen(modifier: Modifier = Modifier, onClick:() -> Unit) {
+fun AuthSecond(modifier: Modifier = Modifier, onClick:() -> Unit) {
     Box(modifier =  Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-        Text(text = "Profile Screen", modifier = Modifier.clickable {
+        Text(text = "Auth Second Screen", modifier = Modifier.clickable {
+            onClick.invoke()
+        })
+    }
+}
+
+@Composable
+fun DashFirst(modifier: Modifier = Modifier, onClick:() -> Unit) {
+    Box(modifier =  Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
+        Text(text = "Dash First Screen ", modifier = Modifier.clickable {
             onClick.invoke()
         })
     }
@@ -30,18 +39,18 @@ fun ProfileScreen(modifier: Modifier = Modifier, onClick:() -> Unit) {
 
 
 @Composable
-fun AboutScreen(myArguments: MyDestination.About, onClick:() -> Unit) {
+fun DashSecond(dashboard: DestSubGraph.DashSecondScreen, modifier: Modifier = Modifier, onClick:() -> Unit) {
     Box(modifier =  Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-        Text(text = "About Screen ${myArguments.name}, ${myArguments.age}", modifier = Modifier.clickable {
+        Text(text = "Dash Second Screen ${dashboard.name} ${dashboard.age}", modifier = Modifier.clickable {
             onClick.invoke()
         })
     }
 }
 
 @Composable
-fun InfoScreen(myDummy: MyDestination.Info, onClick:() -> Unit) {
+fun DashThird(args: DestSubGraph.DashThirdScreen, modifier: Modifier = Modifier, onClick:() -> Unit) {
     Box(modifier =  Modifier.fillMaxSize(), contentAlignment = Alignment.Center){
-        Text(text = "Info Screen ${myDummy.myDummy.name}, ${myDummy.myDummy.gender}, ${myDummy.myDummy.age}", modifier = Modifier.clickable {
+        Text(text = "Dash Third Screen ${args.myDummy.gender}, ${args.myDummy.name}, ${args.myDummy.age}", modifier = Modifier.clickable {
             onClick.invoke()
         })
     }
