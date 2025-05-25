@@ -7,7 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.example.typesafecomposenav_pl_hg.data.MyDummy
-import com.example.typesafecomposenav_pl_hg.utils.Constants
+import com.example.typesafecomposenav_pl_hg.utils.NavigationConstants.MyDummyType
 import kotlin.reflect.typeOf
 
 @Composable
@@ -43,10 +43,7 @@ fun MainNavigation(modifier: Modifier = Modifier){
         }
 
         composable<MyDestination.Info>(
-            typeMap = mapOf(typeOf<MyDummy>() to Constants.CustomNavType<MyDummy>(
-                MyDummy::class,
-                MyDummy.serializer()
-            ))
+            typeMap = mapOf(typeOf<MyDummy>() to MyDummyType)
         ){
             val myArguments = it.toRoute<MyDestination.Info>()
             InfoScreen (myArguments) {
