@@ -8,7 +8,7 @@ import androidx.navigation.compose.navigation
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.toRoute
 import com.example.typesafecomposenav_pl_hg.data.MyDummy
-import com.example.typesafecomposenav_pl_hg.utils.Constants
+import com.example.typesafecomposenav_pl_hg.utils.NavigationConstants.MyDummyType
 import kotlin.reflect.typeOf
 
 @Composable
@@ -60,10 +60,7 @@ fun MainNavigation(modifier: Modifier = Modifier) {
 
         composable<DestSubGraph.DashThirdScreen>(
             typeMap = mapOf(
-                typeOf<MyDummy>() to Constants.CustomNavType<MyDummy>(
-                    MyDummy::class,
-                    MyDummy.serializer()
-                )
+                typeOf<MyDummy>() to MyDummyType
             )
 
         ) {
